@@ -89,8 +89,8 @@ if __name__ == "__main__":
     rng = RNG()
     nb_samples = int(sys.argv[1]) // 4 if len(sys.argv) > 1 else 1
 
-    w = 512
-    h = 384
+    w = 1024
+    h = 768
 
     eye = Vector3(50, 52, 295.6)
     gaze = Vector3(0, -0.042612, -1).normalize()
