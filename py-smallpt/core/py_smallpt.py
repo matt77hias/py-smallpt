@@ -121,7 +121,7 @@ if __name__ == "__main__":
                         dy = sqrt(u2) - 1.0 if u2 < 1 else 1.0 - sqrt(2.0 - u2)
                         d = cx * (((sx + 0.5 + dx) / 2.0 + x) / w - 0.5) + \
                             cy * (((sy + 0.5 + dy) / 2.0 + y) / h - 0.5) + gaze
-                        L += radiance(Ray(eye + d * 140, d.normalize(), tmin=Sphere.EPSILON_SPHERE), rng) * (1.0 / nb_samples)
+                        L += radiance(Ray(eye + d * 130, d.normalize(), tmin=Sphere.EPSILON_SPHERE), rng) * (1.0 / nb_samples)
                     Ls[i] += 0.25 * Vector3.clamp(L)
 
     write_ppm(w, h, Ls)
