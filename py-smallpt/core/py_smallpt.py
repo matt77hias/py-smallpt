@@ -2,7 +2,7 @@ from image_io import write_ppm
 from math import sqrt
 from ray import Ray
 from rng import RNG
-from sampling import uniform_sample_on_hemisphere
+from sampling import cosine_weighted_sample_on_hemisphere
 from sphere import Sphere
 from specular import ideal_specular_reflect, ideal_specular_transmit
 from vector import Vector3
@@ -78,7 +78,7 @@ def radiance(ray, rng):
             u = (Vector3(0.0, 1.0, 0.0) if abs(w[0]) > 0.1 else Vector3(1.0, 0.0, 0.0)).cross(w).normalize()
             v = w.cross(u)
 
-            sample_d = uniform_sample_on_hemisphere(rng.uniform_float(), rng.uniform_float())
+            sample_d = cosine_weighted_sample_on_hemisphere(rng.uniform_float(), rng.uniform_float())
             d = (sample_d[0] * u + sample_d[1] * v + sample_d[2] * w).normalize()
             r = Ray(p, d, tmin=Sphere.EPSILON_SPHERE, depth=r.depth + 1)
             continue
