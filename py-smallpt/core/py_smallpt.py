@@ -56,7 +56,7 @@ def radiance(ray, rng):
         L += F * shape.e
         F *= shape.f
         
-	    # Russion roulette
+	    # Russian roulette
         if r.depth > 4:
             continue_probability = shape.f.max_value()
             if rng.uniform_float() >= continue_probability:
