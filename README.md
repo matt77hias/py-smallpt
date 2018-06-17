@@ -1,7 +1,7 @@
 [![License][s1]][li]
 
 [s1]: https://img.shields.io/badge/license-MIT-blue.svg
-[li]: https://raw.githubusercontent.com/matt77hias/cpp-smallpt/master/LICENSE.txt
+[li]: https://raw.githubusercontent.com/matt77hias/py-smallpt/master/LICENSE.txt
 
 # py-smallpt
 
